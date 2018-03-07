@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.teach.guanjianhui.teachquality.R
 import com.teach.guanjianhui.teachquality.base.BaseFragment
-import com.teach.guanjianhui.teachquality.ui.teach.contract.HomeContact
+import com.teach.guanjianhui.teachquality.ui.teach.contract.HomeContract
 import com.teach.guanjianhui.teachquality.ui.teach.presenter.HomePresenter
 import kotlinx.android.synthetic.main.fragment_selected.*
 
@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_selected.*
  * Created by guanjianhui on 18-1-29.
  */
 
-class HomeFragment : BaseFragment(), HomeContact.View {
+class HomeFragment : BaseFragment(), HomeContract.View {
 
     private val mPresenter by lazy { HomePresenter() }
 
@@ -24,6 +24,10 @@ class HomeFragment : BaseFragment(), HomeContact.View {
     override fun initView() {
         mPresenter.attachView(this)
         tv_selected.setText("我是" + mTitle + "模块")
+    }
+
+    override fun initData() {
+
     }
 
     override fun initListener() {

@@ -23,6 +23,10 @@ class DiscoveryFragment : BaseFragment(), DiscoveryContract.View, View.OnClickLi
         tv_selected.setText("我是" + mTitle + "模块")
     }
 
+    override fun initData() {
+
+    }
+
     override fun initListener() {
         btn_plus.setOnClickListener(this)
     }

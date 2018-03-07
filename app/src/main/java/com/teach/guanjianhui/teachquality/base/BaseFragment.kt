@@ -19,6 +19,7 @@ abstract class BaseFragment : Fragment(), IBaseView {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+        initData()
         initListener()
     }
 
@@ -28,6 +29,8 @@ abstract class BaseFragment : Fragment(), IBaseView {
     //初始化加载View
     abstract fun initView()
 
+    //初始化加载Data
+    abstract fun initData()
 
     //返回layoutId
     abstract fun getLayoutId(): Int

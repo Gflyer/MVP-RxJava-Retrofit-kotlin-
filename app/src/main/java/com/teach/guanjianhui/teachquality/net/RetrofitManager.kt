@@ -1,6 +1,7 @@
 package com.teach.guanjianhui.teachquality.net
 
 import com.teach.guanjianhui.teachquality.api.APIService
+import com.teach.guanjianhui.teachquality.api.UriConstant
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -8,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**
+ * rxJava网络请求封装
  * Created by guanjianhui on 18-1-30.
  */
 
@@ -40,7 +42,7 @@ object RetrofitManager{
     private fun initRetrofit(){
         initClient()
         mRetrofit=Retrofit.Builder()
-                .baseUrl("http://baobab.kaiyanapp.com/api/")
+                .baseUrl(UriConstant.BASE_URL)
                 .client(mClient)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())

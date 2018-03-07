@@ -4,14 +4,14 @@ import com.teach.guanjianhui.teachquality.base.IBaseView
 import com.teach.guanjianhui.teachquality.base.IPresenter
 
 /**
- * Created by guanjianhui on 18-1-30.
+ * Created by guanjianhui on 18-3-7.
  */
-interface HomeContact{
-
-    interface View:IBaseView{
-        //获取数据成功
-        fun loadSuccess(res:Int)
-
+interface MineContract {
+    interface View:IBaseView {
+        //加载成功
+        fun loadSuccess()
+        //加载失败
+        fun loadFailure()
     }
 
     interface Presenter:IPresenter<View> {
