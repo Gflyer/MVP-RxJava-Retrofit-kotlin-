@@ -6,5 +6,5 @@ package com.teach.guanjianhui.teachquality.beans
  */
 data class ResponseBeans(val unique:Int){
     data class TestResponseBean(val id:Int,val title:String,val url:String)
-    data class ListResponseBean(val data:List<ListItemBean>)
+    data class ListResponseBean(val status:Int,val data:ArrayList<ListItemBean>,val msg:String)
 }

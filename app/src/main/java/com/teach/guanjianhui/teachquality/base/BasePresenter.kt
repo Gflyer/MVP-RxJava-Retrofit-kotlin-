@@ -17,7 +17,7 @@ open class BasePresenter<T : IBaseView> : IPresenter<T> {
         this.mRootView = mRootView
     }
 
-
+    //解除view引用，避免内存泄露
     override fun detachView() {
         mRootView = null
         if(!compositeDisposable.isDisposed){

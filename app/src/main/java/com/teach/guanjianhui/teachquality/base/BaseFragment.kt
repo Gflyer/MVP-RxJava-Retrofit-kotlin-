@@ -43,4 +43,5 @@ abstract class BaseFragment : Fragment(), IBaseView {
         Toast.makeText(activity, "加载结束", Toast.LENGTH_SHORT).show()
     }
 
+
 }

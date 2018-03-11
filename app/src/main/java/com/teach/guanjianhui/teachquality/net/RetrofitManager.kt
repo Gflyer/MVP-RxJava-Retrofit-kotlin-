@@ -45,7 +45,7 @@ object RetrofitManager{
                 .baseUrl(UriConstant.BASE_URL)
                 .client(mClient)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())//使用gson解析数据
                 .build()
 
     }

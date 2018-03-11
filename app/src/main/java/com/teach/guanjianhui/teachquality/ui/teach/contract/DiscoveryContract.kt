@@ -16,7 +16,7 @@ interface DiscoveryContract {
         fun showSuccess(res:Int)
     }
 
-    interface Presenter : IPresenter<View> {
+    interface Presenter {
         /*
         * 获取数据
         */
