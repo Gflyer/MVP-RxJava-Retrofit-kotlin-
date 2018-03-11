@@ -2,6 +2,7 @@ package com.teach.guanjianhui.teachquality.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import cn.bmob.v3.Bmob
 
 /**
  * 基类
@@ -11,6 +12,9 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Bmob.initialize(this, "1fc8ca2b8ae58d5755e7f1d453e15ed6");
+
         setContentView(layoutId())
         initView()
         initData()
@@ -28,7 +32,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     //初始化布局id
     abstract fun layoutId(): Int
-
 
     override fun onDestroy() {
         super.onDestroy()

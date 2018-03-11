@@ -20,6 +20,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+//    **兼容Android6.0系统所需，如果这句话报错，可在dependencies标签下使用compile 'cn.bmob.android:http-legacy:1.0'**
+    useLibrary 'org.apache.http.legacy'
+
+
 }
 
 dependencies {
@@ -41,7 +46,6 @@ dependencies {
     //添加lifecycle支持
     implementation "android.arch.lifecycle:extensions:1.1.0"
 
-
     // 底部菜单
     implementation('com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar') {
         exclude group: 'com.android.support', module: 'support-v4'
@@ -50,6 +54,13 @@ dependencies {
     //leakCanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+
+    //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
+    //3.5.5：请务必查看下面注释[1]
+    implementation 'cn.bmob.android:bmob-sdk:3.5.5'
+    //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
+    compile 'cn.bmob.android:http-legacy:1.0'
 }
 repositories {
     mavenCentral()
