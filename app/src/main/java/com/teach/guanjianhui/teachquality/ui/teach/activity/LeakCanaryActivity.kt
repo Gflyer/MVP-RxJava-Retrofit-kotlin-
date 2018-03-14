@@ -5,7 +5,7 @@ import android.os.Message
 import android.view.View
 import android.widget.Toast
 import com.teach.guanjianhui.teachquality.R
-import com.teach.guanjianhui.teachquality.app.MyApplication
+import com.teach.guanjianhui.teachquality.MyApplication
 import com.teach.guanjianhui.teachquality.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_leakcanary.*
 

@@ -1,9 +1,11 @@
-package com.teach.guanjianhui.teachquality.app
+package com.teach.guanjianhui.teachquality
 
 import android.app.Application
 import android.content.Context
+import com.raizlabs.android.dbflow.config.FlowManager
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.leakcanary.RefWatcher
+
 
 /**
  * Created by guanjianhui on 18-3-9.
@@ -14,7 +16,10 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        FlowManager.init(this@MyApplication)
+
         refWatcher = setupLeakCanary()
+
     }
 
     private fun setupLeakCanary(): RefWatcher {

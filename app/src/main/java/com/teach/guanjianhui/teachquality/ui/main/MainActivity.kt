@@ -6,6 +6,7 @@ import android.os.PersistableBundle
 import android.support.v4.app.FragmentTransaction
 import com.flyco.tablayout.listener.CustomTabEntity
 import com.flyco.tablayout.listener.OnTabSelectListener
+import com.raizlabs.android.dbflow.config.FlowManager
 import com.teach.guanjianhui.teachquality.R
 import com.teach.guanjianhui.teachquality.base.BaseActivity
 import com.teach.guanjianhui.teachquality.beans.TabEntity
@@ -38,6 +39,7 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //FlowManager.init(this)
         initTab()
 
         if (savedInstanceState != null) {

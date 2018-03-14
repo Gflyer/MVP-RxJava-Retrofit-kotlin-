@@ -1,8 +1,7 @@
 package com.teach.guanjianhui.teachquality.ui.teach.fragment
 
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -12,10 +11,8 @@ import com.teach.guanjianhui.teachquality.base.BaseFragment
 import com.teach.guanjianhui.teachquality.beans.ListItemBean
 import com.teach.guanjianhui.teachquality.ui.teach.adapter.ListTestAdapter
 import com.teach.guanjianhui.teachquality.ui.teach.contract.MineContract
-import com.teach.guanjianhui.teachquality.ui.teach.fragment.testAac.TestViewModel
 import com.teach.guanjianhui.teachquality.ui.teach.presenter.MinePresenter
 import kotlinx.android.synthetic.main.fragment_mine_test.*
-import kotlinx.android.synthetic.main.fragment_selected.*
 
 /**
  * 我的模块
