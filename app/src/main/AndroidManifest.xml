@@ -37,6 +37,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.teach.activity.LeakCanaryActivity"></activity>
+        <activity android:name=".ui.teach.activity.LoginActivity"></activity>
     </application>
 
 </manifest>

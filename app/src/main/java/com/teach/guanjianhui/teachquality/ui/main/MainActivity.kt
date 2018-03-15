@@ -40,7 +40,6 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //FlowManager.init(this)
         initTab()
 
         if (savedInstanceState != null) {

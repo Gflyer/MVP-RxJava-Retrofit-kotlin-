@@ -1,10 +1,12 @@
 package com.teach.guanjianhui.teachquality.ui.teach.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.teach.guanjianhui.teachquality.R
 import com.teach.guanjianhui.teachquality.base.BaseFragment
+import com.teach.guanjianhui.teachquality.ui.teach.activity.LoginActivity
 import com.teach.guanjianhui.teachquality.ui.teach.contract.DiscoveryContract
 import com.teach.guanjianhui.teachquality.ui.teach.presenter.DiscoveryPresenter
 import kotlinx.android.synthetic.main.fragment_selected.*
@@ -35,11 +37,16 @@ class DiscoveryFragment : BaseFragment(), DiscoveryContract.View, View.OnClickLi
 
     override fun onClick(v: View?) {
         when (v?.id) {
-        R.id.btn_plus
-        -> mPresenter.getData() //开始获取数据
+            R.id.btn_plus
+            -> {
+                mPresenter.getData() //开始获取数据
+                var intent = Intent(activity, LoginActivity::class.java)
+                startActivity(intent)
+            }
         }
 
     }
+
     override fun detachView() {
         mPresenter.detachView()
     }
