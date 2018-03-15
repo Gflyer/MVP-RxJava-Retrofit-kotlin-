@@ -12,12 +12,12 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         setContentView(layoutId())
         initView()
         initData()
         initListener()
     }
+
 
     //初始化监听器
     abstract fun initListener()
@@ -31,7 +31,11 @@ abstract class BaseActivity : AppCompatActivity() {
     //初始化布局id
     abstract fun layoutId(): Int
 
+    //取消订阅，避免内存泄露
+    abstract fun detachView()
+
     override fun onDestroy() {
         super.onDestroy()
+        detachView()
     }
 }

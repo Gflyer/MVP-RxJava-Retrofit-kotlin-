@@ -40,6 +40,9 @@ class DiscoveryFragment : BaseFragment(), DiscoveryContract.View, View.OnClickLi
         }
 
     }
+    override fun detachView() {
+        mPresenter.detachView()
+    }
 
     //相当于static函数,创建对应的fragment对象
     companion object {

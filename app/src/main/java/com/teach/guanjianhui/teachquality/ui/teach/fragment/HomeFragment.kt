@@ -16,11 +16,6 @@ import kotlinx.android.synthetic.main.fragment_selected.*
 
 class HomeFragment : BaseFragment(), HomeContract.View {
 
-    override fun loadSuccess(list: List<TeachTable.StudentInfo>) {
-        for (item in list) {
-            Toast.makeText(activity, item.studentNum, Toast.LENGTH_SHORT).show()
-        }
-    }
 
     private val mPresenter by lazy { HomePresenter() }
 
@@ -46,6 +41,17 @@ class HomeFragment : BaseFragment(), HomeContract.View {
     private fun getData() {
         mPresenter.getData()
     }
+
+    override fun detachView() {
+        mPresenter.detachView()
+    }
+
+    override fun loadSuccess(list: List<TeachTable.StudentInfo>) {
+        for (item in list) {
+            Toast.makeText(activity, item.studentNum, Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     companion object {
         fun getInstance(title: String): HomeFragment {

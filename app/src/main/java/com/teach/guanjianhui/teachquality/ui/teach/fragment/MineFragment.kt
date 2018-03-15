@@ -1,7 +1,6 @@
 package com.teach.guanjianhui.teachquality.ui.teach.fragment
 
 
-
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -49,12 +48,16 @@ class MineFragment : BaseFragment(), MineContract.View {
     }
 
     override fun initData() {
-        Toast.makeText(activity,"开始请求", Toast.LENGTH_SHORT).show()
-        mPresenter.getData("4",20)
+        Toast.makeText(activity, "开始请求", Toast.LENGTH_SHORT).show()
+        mPresenter.getData("4", 20)
     }
 
     override fun initListener() {
 
+    }
+
+    override fun detachView() {
+        mPresenter.detachView()
     }
 
     companion object {
@@ -87,8 +90,4 @@ class MineFragment : BaseFragment(), MineContract.View {
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        mPresenter.detachView()
-    }
 }

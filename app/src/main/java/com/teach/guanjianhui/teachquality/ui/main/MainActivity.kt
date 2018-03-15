@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
+
     //底部栏文字
     private val tab_tittles: Array<String> = arrayOf("每日精选", "发现", "热门", "我的")
 
@@ -134,5 +135,8 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initListener() {
+    }
+    override fun detachView() {
+
     }
 }

@@ -12,6 +12,7 @@ import android.widget.Toast
  */
 abstract class BaseFragment : Fragment(), IBaseView {
 
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(getLayoutId(), null)//返回获得的View
     }
@@ -22,6 +23,12 @@ abstract class BaseFragment : Fragment(), IBaseView {
         initData()
         initListener()
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        detachView()
+    }
+
 
     //初始化监听
     abstract fun initListener()
@@ -34,6 +41,9 @@ abstract class BaseFragment : Fragment(), IBaseView {
 
     //返回layoutId
     abstract fun getLayoutId(): Int
+
+    //取消订阅，避免内存泄露
+    abstract fun detachView()
 
     override fun showLoading() {
         Toast.makeText(activity, "加载中", Toast.LENGTH_SHORT).show()

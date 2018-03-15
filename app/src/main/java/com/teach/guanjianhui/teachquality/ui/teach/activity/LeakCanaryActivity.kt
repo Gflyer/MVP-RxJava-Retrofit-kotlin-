@@ -86,6 +86,10 @@ class LeakCanaryActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
+    override fun detachView() {
+        //mPresenter.detachView()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         val refWatcher = MyApplication.getRefWatcher(this)

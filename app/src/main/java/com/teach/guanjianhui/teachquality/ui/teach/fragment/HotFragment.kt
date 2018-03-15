@@ -30,6 +30,9 @@ class HotFragment : BaseFragment() {
             startActivity(intent)
         }
     }
+    override fun detachView() {
+       // mPresenter.detachView()
+    }
 
     //相当于static
     companion object {
