@@ -2,7 +2,6 @@ package com.teach.guanjianhui.teachquality.ui.teach.fragment
 
 import android.os.Bundle
 import android.widget.Toast
-import com.raizlabs.android.dbflow.rx2.kotlinextensions.save
 import com.teach.guanjianhui.teachquality.R
 import com.teach.guanjianhui.teachquality.base.BaseFragment
 import com.teach.guanjianhui.teachquality.db.table.TeachTable
@@ -16,6 +15,12 @@ import kotlinx.android.synthetic.main.fragment_selected.*
  */
 
 class HomeFragment : BaseFragment(), HomeContract.View {
+
+    override fun loadSuccess(list: List<TeachTable.StudentInfo>) {
+        for (item in list) {
+            Toast.makeText(activity, item.studentNum, Toast.LENGTH_SHORT).show()
+        }
+    }
 
     private val mPresenter by lazy { HomePresenter() }
 
@@ -35,29 +40,11 @@ class HomeFragment : BaseFragment(), HomeContract.View {
     override fun initListener() {
         btn_plus.setOnClickListener {
             getData()
-            TeachTable.StudentInfo("3114001443", "guan", "女", "2").save { isSuccess ->
-                if (isSuccess) {
-                    Toast.makeText(activity, "成功", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(activity, "失败", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-
-//            select.from(TeachTable.StudentInfo::class.java)
-//                    .rx()
-//                    .list { list ->
-//
-//                    }
         }//lambda表达式优化
     }
 
     private fun getData() {
         mPresenter.getData()
-    }
-
-    override fun loadSuccess(res: Int) {
-        Toast.makeText(activity, "我是" + res, Toast.LENGTH_SHORT).show()
     }
 
     companion object {

@@ -6,7 +6,6 @@ import com.raizlabs.android.dbflow.annotation.PrimaryKey
 import com.raizlabs.android.dbflow.annotation.Table
 import com.raizlabs.android.dbflow.rx2.structure.BaseRXModel
 //import com.raizlabs.android.dbflow.rx2.structure.BaseRXModel
-import com.raizlabs.android.dbflow.sql.language.Operator
 import com.raizlabs.android.dbflow.structure.BaseModel
 import com.teach.guanjianhui.teachquality.db.TeachDatabase
 import java.sql.Date
