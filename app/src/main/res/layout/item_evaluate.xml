@@ -26,6 +26,7 @@
         android:text="提前到达岗位，认真做好准备工作，按时上下课" />
 
     <TextView
+        android:id="@+id/tv_excellent"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -34,6 +35,7 @@
         android:text="5" />
 
     <TextView
+        android:id="@+id/tv_good"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -42,6 +44,7 @@
         android:text="4" />
 
     <TextView
+        android:id="@+id/tv_qualified"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -50,6 +53,7 @@
         android:text="3" />
 
     <TextView
+        android:id="@+id/tv_unqualified"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
