@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">teachQuality</string>
+    <string name="action_settings">设置</string>
+
+    <string name="dialog_promise_content">\u3000\u3000作为学生信息员，本人承诺已按照《学生评教流程》组织本班学生参与评教工作，并将各位任课教师的评价成绩在班级Q群或班级会议上向全体学生做了公示，结果无异议。</string>
+
 </resources>

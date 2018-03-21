@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="def_padding_margin_5D">5dp</dimen>
+    <dimen name="def_padding_margin_10D">10dp</dimen>
+    <dimen name="def_padding_margin_15D">15dp</dimen>
+    <dimen name="def_padding_margin_20D">20dp</dimen>
+    <dimen name="def_padding_margin_25D">25dp</dimen>
+    <dimen name="def_padding_margin_30D">30dp</dimen>
+    <dimen name="def_padding_margin_40D">40dp</dimen>
+
+</resources>

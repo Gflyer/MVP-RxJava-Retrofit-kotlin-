@@ -9,10 +9,16 @@ import io.reactivex.Single
 /**
  * Created by guanjianhui on 18-3-14.
  */
-class QueryDao<E : BaseRXModel, T> : IQueryDao<E, T> {
+class QueryDao<E : BaseRXModel> : IQueryDao<E> {
+
+    override fun <E> query(clazz: Class<E>): Single<List<E>> {
+        return RXSQLite.rx(select.from(clazz)).queryList()
+    }
+
     //查询
-    override fun <E> query(clazz: Class<E>, column: Property<T>, value: T): Single<List<E>> {
-        return RXSQLite.rx(select.from(clazz).where(column.`is`(value))
-        ).queryList()
+    override fun <E, T> query(clazz: Class<E>, column: Property<T>, value: T): Single<List<E>> {
+
+        return RXSQLite.rx(select.from(clazz).where(column.`is`(value))).queryList()
+
     }
 }

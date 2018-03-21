@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include layout="@layout/tool_title"></include>
+
+    <ImageView
+        android:id="@+id/im_evaluate"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/def_padding_margin_15D" />
+
+    <TextView
+        android:id="@+id/tv_evaluate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/def_padding_margin_15D"
+        android:text="教学态度"
+        android:textColor="@color/clo_default_gray"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_evaluate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/def_padding_margin_20D"
+        android:layout_marginRight="@dimen/def_padding_margin_20D"
+        android:layout_marginTop="@dimen/def_padding_margin_10D"></android.support.v4.view.ViewPager>
+
+</LinearLayout>

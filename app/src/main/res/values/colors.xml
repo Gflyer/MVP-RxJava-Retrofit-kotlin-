@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="clo_normal_white">#F7F7F7</color>
+    <color name="clo_status_bar">#49CC7F</color>
+    <color name="clo_default_gray">#bfbfbf</color>
+
 </resources>

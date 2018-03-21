@@ -16,9 +16,6 @@ import com.teach.guanjianhui.teachquality.beans.ListItemBean
  */
 class ListTestAdapter(var itemList: ArrayList<ListItemBean>?, val context: Context) : Adapter<ListTestAdapter.MineViewHolder>() {
 
-    init {
-
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ListTestAdapter.MineViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.mine_item, parent, false)

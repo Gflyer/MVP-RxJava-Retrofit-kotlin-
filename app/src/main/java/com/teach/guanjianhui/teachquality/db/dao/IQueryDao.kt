@@ -7,10 +7,15 @@ import io.reactivex.Single
 /**
  * Created by guanjianhui on 18-3-14.
  */
-interface IQueryDao<E: BaseRXModel,T>{
+interface IQueryDao<E: BaseRXModel>{
+
+    /**
+     * 查询(按条件)
+     */
+    fun <E,T>query(clazz: Class<E>, column: Property<T>, value: T): Single<List<E>>
 
     /**
      * 查询
      */
-    fun <E>query(clazz: Class<E>, column: Property<T>, value: T): Single<List<E>>
+    fun <E>query(clazz: Class<E>):Single<List<E>>
 }

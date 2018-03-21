@@ -52,9 +52,16 @@ class DBModel {
     }
 
     /**
-     * 查询数据
+     * 查询数据根据条件
      */
     fun <E : BaseRXModel, T> getQueryData(clazz: Class<E>, column: Property<T>, value: T): Single<List<E>> {
-        return QueryDao<E, T>().query(clazz, column, value).compose(SchedulerUtils.ioToMain())
+        return QueryDao<E>().query(clazz, column, value).compose(SchedulerUtils.ioToMain())
+    }
+
+    /**
+     * 查询全部数据
+     */
+    fun <E : BaseRXModel> getQueryData(clazz: Class<E>): Single<List<E>> {
+        return QueryDao<E>().query(clazz).compose(SchedulerUtils.ioToMain())
     }
 }

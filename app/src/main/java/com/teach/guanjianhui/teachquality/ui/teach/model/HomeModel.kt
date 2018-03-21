@@ -16,6 +16,6 @@ class HomeModel {
      * 查询数据
      */
     fun <E : BaseRXModel, T> getQueryData(clazz: Class<E>, column: Property<T>, value: T): Single<List<E>> {
-        return QueryDao<E, T>().query(clazz, column, value).compose(SchedulerUtils.ioToMain())
+        return QueryDao<E>().query(clazz, column, value).compose(SchedulerUtils.ioToMain())
     }
 }

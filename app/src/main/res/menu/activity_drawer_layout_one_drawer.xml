@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Login">
+        <menu>
+            <item
+                android:id="@+id/nav_student"
+                android:icon="@mipmap/ic_menu_student"
+                android:title="学生登录" />
+            <item
+                android:id="@+id/nav_teacher"
+                android:icon="@mipmap/ic_menu_teacher"
+                android:title="教师登录" />
+            <item
+                android:id="@+id/nav_supervisor"
+                android:icon="@mipmap/ic_menu_supervisor"
+                android:title="督导登录" />
+            <item
+                android:id="@+id/nav_manager"
+                android:icon="@mipmap/ic_menu_manager"
+                android:title="管理员登录" />
+
+        </menu>
+    </item>
+    <item android:title="More">
+        <menu>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@mipmap/ic_menu_setting"
+                android:title="设置" />
+            <item
+                android:id="@+id/nav_update"
+                android:icon="@mipmap/ic_menu_update"
+                android:title="检查更新" />
+        </menu>
+    </item>
+
+</menu>
