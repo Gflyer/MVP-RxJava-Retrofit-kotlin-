@@ -1,6 +1,7 @@
 package com.teach.guanjianhui.teachquality.ui.teach.model
 
 
+import com.raizlabs.android.dbflow.annotation.Column
 import com.raizlabs.android.dbflow.rx2.structure.BaseRXModel
 import com.raizlabs.android.dbflow.sql.language.property.Property
 import com.teach.guanjianhui.teachquality.db.dao.AddDao
@@ -63,5 +64,19 @@ class DBModel {
      */
     fun <E : BaseRXModel> getQueryData(clazz: Class<E>): Single<List<E>> {
         return QueryDao<E>().query(clazz).compose(SchedulerUtils.ioToMain())
+    }
+
+    /**
+     * 按顺序简单查询
+     */
+    fun <E : BaseRXModel, R> getQueryData(clazz: Class<E>, orderColumn: Property<R>, isAscending: Boolean): Single<List<E>> {
+        return QueryDao<E>().query(clazz, orderColumn, isAscending).compose(SchedulerUtils.ioToMain())
+    }
+
+    /**
+     * 按顺序查询
+     */
+    fun <E : BaseRXModel, T, R> getQueryData(clazz: Class<E>, column: Property<T>, value: T, orderColumn: Property<R>, isAscending: Boolean): Single<List<E>> {
+        return QueryDao<E>().query(clazz, column, value, orderColumn, isAscending).compose(SchedulerUtils.ioToMain())
     }
 }

@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="180dp">
+
+
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:background="@mipmap/pic_head_login"
-        />
+        android:layout_height="180dp"
+        android:background="@mipmap/pic_head_login" />
 
-</LinearLayout>
+    <ImageView
+        android:layout_marginLeft="@dimen/def_padding_margin_5D"
+        android:layout_marginTop="@dimen/def_padding_margin_5D"
+        android:id="@+id/logo_school"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/logo_school" />
+
+    <ImageView
+        android:layout_marginTop="@dimen/def_padding_margin_5D"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo_school"
+        android:src="@mipmap/text_school" />
+
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/def_padding_margin_5D"
+        android:layout_marginLeft="@dimen/def_padding_margin_10D"
+        android:text="v1.0.0"
+        android:textColor="@color/clo_normal_white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

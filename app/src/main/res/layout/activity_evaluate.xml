@@ -7,28 +7,37 @@
 
     <include layout="@layout/tool_title"></include>
 
-    <ImageView
-        android:id="@+id/im_evaluate"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="@dimen/def_padding_margin_15D" />
 
     <TextView
         android:id="@+id/tv_evaluate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/def_padding_margin_15D"
-        android:text="教学态度"
-        android:textColor="@color/clo_default_gray"
-        android:textSize="25sp"
+        android:text="教学态度(20)"
+        android:textColor="@color/clo_status_bar"
+        android:textSize="26sp"
         android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/im_evaluate"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="@dimen/def_padding_margin_15D"
+        android:src="@mipmap/ic_eva_attitude" />
+
+    <include layout="@layout/item_evaluate_header"></include>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginLeft="@dimen/def_padding_margin_15D"
+        android:layout_marginRight="@dimen/def_padding_margin_15D"
+        android:background="@drawable/bg_toolbar_head"></View>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_evaluate"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/def_padding_margin_20D"
-        android:layout_marginRight="@dimen/def_padding_margin_20D"
         android:layout_marginTop="@dimen/def_padding_margin_10D"></android.support.v4.view.ViewPager>
 
 </LinearLayout>

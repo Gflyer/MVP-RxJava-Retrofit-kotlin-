@@ -15,12 +15,9 @@ class LoginPresenter : BasePresenter<LoginContact.View>(), LoginContact.Presente
 
     //学生验证
     override fun getStudentUserList() {
-        Log.i("ssss123","123456")
         dbModel.getQueryData(TeachTable.StudentUser::class.java).subscribe({ list ->
-            Log.i("ssss123","123456000")
             mRootView?.loadStudentSuccess(list)
         }, { error ->
-            Log.i("ssss123","123456eee")
             mRootView?.loadFailure(error.message)
         })
     }

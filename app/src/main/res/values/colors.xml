@@ -5,6 +5,15 @@
     <color name="colorAccent">#FF4081</color>
     <color name="clo_normal_white">#F7F7F7</color>
     <color name="clo_status_bar">#49CC7F</color>
-    <color name="clo_default_gray">#bfbfbf</color>
+    <color name="clo_status_light_green">#51D399</color>
+    <color name="clo_status_dark_green">#21B35C</color>
+    <color name="clo_chart_green">#3CDC4E</color>
+    <color name="clo_chart_blue">#17C5FF</color>
+    <color name="clo_status_dark_blue">#008DD9</color>
 
+
+    <color name="clo_default_gray">#bfbfbf</color>
+    <color name="clo_dark_gray">#8a8a8a</color>
+
+    <color name="clo_eva_yellow">#BE9134</color>
 </resources>

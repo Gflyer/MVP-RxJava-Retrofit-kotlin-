@@ -6,6 +6,7 @@ import com.teach.guanjianhui.teachquality.base.BaseActivity
 import kotlinx.android.synthetic.main.tool_title.*
 import android.view.Gravity
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import android.text.Editable
@@ -18,9 +19,7 @@ import com.afollestad.materialdialogs.DialogAction
 import com.afollestad.materialdialogs.MaterialDialog
 import com.teach.guanjianhui.teachquality.constant.Field
 import com.teach.guanjianhui.teachquality.db.table.TeachTable
-import com.teach.guanjianhui.teachquality.scheduler.SchedulerUtils
 import com.teach.guanjianhui.teachquality.ui.teach.contract.LoginContact
-import com.teach.guanjianhui.teachquality.ui.teach.model.DBModel
 import com.teach.guanjianhui.teachquality.ui.teach.presenter.LoginPresenter
 import com.teach.guanjianhui.teachquality.utils.SPUtils
 import com.teach.guanjianhui.teachquality.utils.ToastUtils
@@ -33,11 +32,18 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : BaseActivity(), LoginContact.View {
 
 
-    val tv_tittle: TextView by lazy { TextView(this) }
+    val tv_myTittle: TextView by lazy { TextView(this) }
 
     val mPresenter: LoginPresenter by lazy { LoginPresenter() }
 
     var type = SPUtils.getInt(Field.LOGIN_STATUS, Field.LOGIN_STUDENT)
+
+    var studentNum: String? = null//学生编号
+    var teacherNum: String? = null//教师编号
+    //var workmateNum: String? = null//同行编号
+    var supervisorNum: String? = null//督导编号
+    var managerNum: String? = null//管理员编号
+
 
     override fun layoutId(): Int {
         return R.layout.activity_login
@@ -46,14 +52,23 @@ class LoginActivity : BaseActivity(), LoginContact.View {
     override fun initView() {
 
         mPresenter.attachView(this)
-        tv_tittle.setTextColor(ContextCompat.getColor(this, R.color.clo_normal_white))
-        tv_tittle.text = "登录"
-        tv_tittle.setTextSize(20.0f)
-        ToolbarHelper.addMiddleTitle(tv_tittle, tool_title)
+        tv_myTittle.setTextColor(ContextCompat.getColor(this, R.color.clo_normal_white))
+        tv_myTittle.text = "登录"
+        tv_myTittle.setTextSize(20.0f)
+        ToolbarHelper.addMiddleTitle(tv_myTittle, tool_title)
         tool_title.setTitleTextColor(ContextCompat.getColor(this, R.color.clo_normal_white))
-        //   tool_title.navigationIcon = getDrawable(R.drawable.ic_menu_choose)//菜单键
         layout_statusBar.setBackground(ContextCompat.getDrawable(this, R.drawable.bg_toolbar_head))
         view_statusBar.layoutParams.height = getStatusBarHeight()
+
+        val version = packageManager.getPackageInfo(packageName, 0).versionName
+        val headerLayout = navigation_view.getHeaderView(0)
+        val tv_version = headerLayout.findViewById<TextView>(R.id.tv_version)
+
+        tv_version.text = "v $version"
+
+        //隐藏
+        tv_title.visibility = View.GONE
+        tv_end.visibility = View.GONE
 
         initLogin()
 
@@ -61,7 +76,7 @@ class LoginActivity : BaseActivity(), LoginContact.View {
 
     //初始化登录选项
     private fun initLogin() {
-        cb_remember.isChecked=SPUtils.getBoolean(Field.IS_REM,false)
+        cb_remember.isChecked = SPUtils.getBoolean(Field.IS_REM, false)
 
         when (type) {
             Field.LOGIN_STUDENT -> {
@@ -103,15 +118,7 @@ class LoginActivity : BaseActivity(), LoginContact.View {
     }
 
     override fun initData() {
-        var dbModel = DBModel()
-        var st = TeachTable.StudentUser("123456", "000000")
-        dbModel.addData(st).compose(SchedulerUtils.ioToMain()).subscribe({ isSucccess ->
-            if (isSucccess) {
-                ToastUtils.showToast(this, "添加成功")
-            } else {
-                ToastUtils.showToast(this, "失败")
-            }
-        })
+
     }
 
 
@@ -131,19 +138,19 @@ class LoginActivity : BaseActivity(), LoginContact.View {
 
             override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
                 super.onDrawerSlide(drawerView, slideOffset)
-                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                val imm = application.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(this@LoginActivity.currentFocus.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
                 //imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
             }
 
             override fun onDrawerOpened(drawerView: View) {
                 super.onDrawerOpened(drawerView)
-                tv_tittle.text = "关于"
+                tv_myTittle.text = "关于"
             }
 
             override fun onDrawerClosed(drawerView: View) {
                 super.onDrawerClosed(drawerView)
-                tv_tittle.text = "登录"
+                tv_myTittle.text = "登录"
 
             }
         }
@@ -228,11 +235,13 @@ class LoginActivity : BaseActivity(), LoginContact.View {
             //设置
                 R.id.nav_setting -> {
                     drawLayout.closeDrawer(navigation_view)
+                    ToastUtils.showToast(this,"开发中")
                 }
 
             //更新
                 R.id.nav_update -> {
                     drawLayout.closeDrawer(navigation_view)
+                    ToastUtils.showToast(this,"开发中")
                 }
 
 
@@ -286,8 +295,6 @@ class LoginActivity : BaseActivity(), LoginContact.View {
         })
 
 
-
-
     }
 
     fun clearText() {
@@ -313,6 +320,7 @@ class LoginActivity : BaseActivity(), LoginContact.View {
                     //登陆成功
                     ToastUtils.showToast(this, "登录成功")
                     showPromiseDialog()
+                    studentNum = item.studentNum
                     if (cb_remember.isChecked) {
                         SPUtils.putString(Field.REM_STUDENT_USERNAME, ed_username.text.toString().trim())
                         SPUtils.putString(Field.REM_STUDENT_PASSWORD, ed_password.text.toString().trim())
@@ -337,6 +345,13 @@ class LoginActivity : BaseActivity(), LoginContact.View {
                 if (item.teacherNum.equals(ed_username.text.toString().trim()) && item.password.equals(ed_password.text.toString().trim())) {
                     //登陆成功
                     ToastUtils.showToast(this, "登录成功")
+
+                    //跳转同行评价界面
+                    teacherNum = item.teacherNum
+                    val teacherIntent = Intent(this, TeacherChooseActivity::class.java)
+                    teacherIntent.putExtra("teacherNum", teacherNum)
+                    startActivity(teacherIntent)
+
                     if (cb_remember.isChecked) {
                         SPUtils.putString(Field.REM_TEACHER_USERNAME, ed_username.text.toString().trim())
                         SPUtils.putString(Field.REM_TEACHER_PASSWORD, ed_password.text.toString().trim())
@@ -361,6 +376,13 @@ class LoginActivity : BaseActivity(), LoginContact.View {
                 if (item.supervisionNum.equals(ed_username.text.toString().trim()) && item.password.equals(ed_password.text.toString().trim())) {
                     //登陆成功
                     ToastUtils.showToast(this, "登录成功")
+
+                    //跳转同行评价界面
+                    supervisorNum = item.supervisionNum
+                    val supervisorIntent = Intent(this, SupervisorChooseActivity::class.java)
+                    supervisorIntent.putExtra("supervisorNum", supervisorNum)
+                    startActivity(supervisorIntent)
+
                     if (cb_remember.isChecked) {
                         SPUtils.putString(Field.REM_SUPERVISOR_USERNAME, ed_username.text.toString().trim())
                         SPUtils.putString(Field.REM_SUPERVISOR_PASSWORD, ed_password.text.toString().trim())
@@ -375,8 +397,7 @@ class LoginActivity : BaseActivity(), LoginContact.View {
                     ToastUtils.showToast(this, "登录失败,请检查用户名或密码")
                 }
             }
-            //登录失败
-            ToastUtils.showToast(this, "登录失败,请检查用户名或密码")
+
         }
     }
 
@@ -400,8 +421,7 @@ class LoginActivity : BaseActivity(), LoginContact.View {
                     ToastUtils.showToast(this, "登录失败,请检查用户名或密码")
                 }
             }
-            //登录失败
-            ToastUtils.showToast(this, "登录失败,请检查用户名或密码")
+
         }
     }
 
@@ -428,7 +448,7 @@ class LoginActivity : BaseActivity(), LoginContact.View {
     fun showPromiseDialog() {
         var promiseDialog = MaterialDialog.Builder(this@LoginActivity)
                 .title("提醒")
-                .icon(ContextCompat.getDrawable(this,R.mipmap.ic_student_dialog_tip))
+                .icon(ContextCompat.getDrawable(this, R.mipmap.ic_student_dialog_tip))
                 .content(R.string.dialog_promise_content)
                 .negativeText("返回")
                 .positiveText("我承诺")
@@ -436,12 +456,37 @@ class LoginActivity : BaseActivity(), LoginContact.View {
                 .canceledOnTouchOutside(false)
                 .onAny({ dialog, which ->
                     if (which == DialogAction.POSITIVE) {
-                        //跳转
+                        showRuleDialog()
+
                     } else if (which == DialogAction.NEGATIVE) {
                         dialog.dismiss()
                     }
                 }).show()
 
+    }
+
+    fun showRuleDialog() {
+        MaterialDialog.Builder(this)
+                .content("您是否已熟知评教规则和流程！！！")
+                .contentColor(ContextCompat.getColor(this, R.color.clo_status_dark_green))
+                .negativeText("否")
+                .negativeColor(ContextCompat.getColor(this, android.R.color.darker_gray))
+                .positiveText("是")
+                .positiveColor(ContextCompat.getColor(this, android.R.color.black))
+                .canceledOnTouchOutside(false)
+                .onAny({ dialog, which ->
+                    if (which == DialogAction.POSITIVE) {
+                        //跳转
+                        val studentEvaIntent = Intent(this, StudentEvaActivity::class.java)
+                        studentEvaIntent.putExtra("studentNum", studentNum)
+                        startActivity(studentEvaIntent)
+                    } else if (which == DialogAction.NEGATIVE) {
+                        val evaIntent = Intent(this, EvaluateActivity::class.java)
+                        evaIntent.putExtra("studentNum", studentNum)
+                        startActivity(evaIntent)
+
+                    }
+                }).show()
     }
 
 

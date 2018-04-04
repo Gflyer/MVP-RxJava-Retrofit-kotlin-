@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cv_evaluate"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/def_padding_margin_10D"
-    app:cardCornerRadius="@dimen/def_padding_margin_20D"
-    app:cardElevation="@dimen/def_padding_margin_5D">
+    android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rec_evaluate"
+
+
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/def_padding_margin_10D"
+        android:layout_marginLeft="@dimen/def_padding_margin_20D"
+        android:layout_marginRight="@dimen/def_padding_margin_20D"
+        android:layout_marginBottom="@dimen/def_padding_margin_30D"
+        app:cardCornerRadius="@dimen/def_padding_margin_20D"
+        app:cardElevation="@dimen/def_padding_margin_5D">
 
-    </android.support.v7.widget.RecyclerView>
-</android.support.v7.widget.CardView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rec_evaluate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

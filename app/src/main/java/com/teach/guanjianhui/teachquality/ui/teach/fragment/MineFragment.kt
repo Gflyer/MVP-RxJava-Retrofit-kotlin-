@@ -4,6 +4,7 @@ package com.teach.guanjianhui.teachquality.ui.teach.fragment
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.View
 import android.widget.Toast
 import com.teach.guanjianhui.teachquality.R
 import com.teach.guanjianhui.teachquality.base.BaseFragment
@@ -11,6 +12,7 @@ import com.teach.guanjianhui.teachquality.beans.ListItemBean
 import com.teach.guanjianhui.teachquality.ui.teach.adapter.ListTestAdapter
 import com.teach.guanjianhui.teachquality.ui.teach.contract.MineContract
 import com.teach.guanjianhui.teachquality.ui.teach.presenter.MinePresenter
+import com.teach.guanjianhui.teachquality.widgets.SuspendDecoration
 import kotlinx.android.synthetic.main.fragment_mine_test.*
 
 /**
@@ -86,6 +88,7 @@ class MineFragment : BaseFragment(), MineContract.View {
     override fun setList(list: ArrayList<ListItemBean>) {
         myAdapter = ListTestAdapter(list, activity)
         rlv_mine.layoutManager = myLayoutManager
+
         rlv_mine.adapter = myAdapter
 
     }

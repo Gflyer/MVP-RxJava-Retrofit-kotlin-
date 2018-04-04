@@ -1,5 +1,6 @@
 package com.teach.guanjianhui.teachquality.db.table
 
+import android.util.Log
 import com.raizlabs.android.dbflow.annotation.Column
 import com.raizlabs.android.dbflow.annotation.NotNull
 import com.raizlabs.android.dbflow.annotation.PrimaryKey
@@ -30,14 +31,14 @@ class TeachTable {
                            @Column @NotNull var certificationUrl: String = "null",
                            @Column var teacherSource: String? = null,
                            @Column @NotNull var instituteNum: String = "000"
-    ) : BaseModel()
+    ) : BaseRXModel()
 
     //2.学生信息表
     @Table(database = TeachDatabase::class)
     data class StudentInfo(@PrimaryKey var studentNum: String = "000",
-                            @Column @NotNull var name: String = "undef",
-                            @Column @NotNull var sex: String = "undef",
-                            @Column @NotNull var classNum: String = "000"
+                           @Column @NotNull var name: String = "undef",
+                           @Column @NotNull var sex: String = "undef",
+                           @Column @NotNull var classNum: String = "000"
     ) : BaseRXModel()
 
     //3.督导信息表
@@ -76,7 +77,6 @@ class TeachTable {
                             @Column @NotNull var termNum: String = "000",
                             @Column @NotNull var classNum: String = "000"
     ) : BaseRXModel()
-
     //8.三方评分权重比例表
     @Table(database = TeachDatabase::class)
     data class GradePercent(
@@ -125,8 +125,8 @@ class TeachTable {
 
     //15.学生评分表
     @Table(database = TeachDatabase::class)
-    data class StudentScore(@PrimaryKey var studentNum: String = "000",
-                            @PrimaryKey var teachingTaskNum: String = "000",
+    data class StudentScore(@PrimaryKey var studentNum: String? = "000",
+                            @PrimaryKey var teachingTaskNum: String? = "000",
                             @Column @NotNull var attitudeScore: Int = 0,
                             @Column @NotNull var contentScore: Int = 0,
                             @Column @NotNull var methodScore: Int = 0,
@@ -134,7 +134,7 @@ class TeachTable {
                             @Column @NotNull var orderScore: Int = 0,
                             @Column var comment: String? = null,
                             @Column @NotNull var commentTime: String = "undef"
-    ) : BaseRXModel()
+    ) :BaseRXModel()
 
     //16.同行评分表
     @Table(database = TeachDatabase::class)

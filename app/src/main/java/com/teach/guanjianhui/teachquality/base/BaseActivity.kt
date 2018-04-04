@@ -25,12 +25,7 @@ abstract class BaseActivity : AppCompatActivity(),IBaseView {
         setContentView(layoutId())
 
         var rootView = window.decorView.findViewById<ViewGroup>(android.R.id.content)
-        // rootView.setPadding(0, getStatusBarHeight(), 0, 0);
-        //getWindow().statusBarColor=ContextCompat.getColor(this, R.color.clo_status_bar)
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//            val window = this.getWindow();
-//            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//        }
+
         initView()
         initData()
         initListener()

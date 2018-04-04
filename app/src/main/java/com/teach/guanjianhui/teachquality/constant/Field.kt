@@ -26,4 +26,24 @@ object Field{
 
     const val IS_REM="is_rem"
 
+
+    /******************指标类型********************/
+    const val EVALUATE_ATTITUDE=0X01
+    const val EVALUATE_CONTENT=0X02
+    const val EVALUATE_METHOD=0X03
+    const val EVALUATE_EFFECT=0X04
+    const val EVALUATE_ORDER=0X05
+
+
+    /******************评分类型********************/
+    const val EVALUATE_EXCELLENT=0X11
+    const val EVALUATE_GOOD=0X12
+    const val EVALUATE_QUALITY=0X13
+    const val EVALUATE_UNQUALITY=0X14
+
+
+
+
+
+
 }

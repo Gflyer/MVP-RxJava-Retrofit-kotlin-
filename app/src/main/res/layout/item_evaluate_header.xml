@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp"
+    android:layout_marginLeft="@dimen/def_padding_margin_20D"
+    android:layout_marginRight="@dimen/def_padding_margin_20D"
     android:gravity="center_vertical"
     android:orientation="horizontal">
 
@@ -9,42 +11,48 @@
         android:id="@+id/tv_evaluate_score"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="7.5"
+        android:layout_weight="7"
         android:gravity="center"
-        android:text="评价指标(20分)"
-        android:textSize="22sp"
+        android:text="评价指标"
+        android:textColor="@color/clo_default_gray"
+        android:textSize="23sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="优秀"
-        android:textSize="16sp" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:ems="1"
         android:gravity="center"
-        android:text="良好"
-        android:textSize="16sp" />
+        android:text="优\n秀"
+        android:textSize="17sp" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:ems="1"
         android:gravity="center"
-        android:text="合格"
-        android:textSize="16sp" />
+        android:text="良\n好"
+        android:textSize="17sp" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:ems="1"
         android:gravity="center"
-        android:text="不   合   格"
+        android:text="合\n格"
+        android:textSize="17sp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="1"
+        android:gravity="center"
+        android:text="不\n合\n格"
         android:textSize="16sp" />
 
 
