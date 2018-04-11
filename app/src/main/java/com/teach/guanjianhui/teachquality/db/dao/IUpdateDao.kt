@@ -12,11 +12,13 @@ interface IUpdateDao<E : BaseRXModel> {
     /**
      * 指定list更新
      */
-    fun update(upList:List<E>):Single<Boolean>
+    fun update(upList: List<E>): Single<Boolean>
+
+    fun update(item: E): Single<Boolean>
 
     /**
      *条件更新
      */
-    fun <N, O> update(clazz: Class<E>, upColumn: Property<N>, upValue: N, oldColumn: Property<O>, oldValue: O):Single<Boolean>
+    fun <N, O> update(clazz: Class<E>, upColumn: Property<N>, upValue: N, oldColumn: Property<O>, oldValue: O): Single<Boolean>
 
 }

@@ -407,6 +407,12 @@ class LoginActivity : BaseActivity(), LoginContact.View {
                 if (item.managerNum.equals(ed_username.text.toString().trim()) && item.password.equals(ed_password.text.toString().trim())) {
                     //登陆成功
                     ToastUtils.showToast(this, "登录成功")
+                    //跳转同行评价界面
+                    managerNum = item.managerNum
+                    val managerIntent = Intent(this, ManagerChooseActivity::class.java)
+                    managerIntent.putExtra("managerNum", managerNum)
+                    startActivity(managerIntent)
+
                     if (cb_remember.isChecked) {
                         SPUtils.putString(Field.REM_MANAGER_USERNAME, ed_username.text.toString().trim())
                         SPUtils.putString(Field.REM_MANAGER_PASSWORD, ed_password.text.toString().trim())

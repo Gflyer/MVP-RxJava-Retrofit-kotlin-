@@ -53,6 +53,13 @@ class DBModel {
     }
 
     /**
+     * 更新一条数据
+     */
+    fun <E : BaseRXModel> updateData(item: E): Single<Boolean> {
+        return UpdateDao<E>().update(item).compose(SchedulerUtils.ioToMain())
+    }
+
+    /**
      * 查询数据根据条件
      */
     fun <E : BaseRXModel, T> getQueryData(clazz: Class<E>, column: Property<T>, value: T): Single<List<E>> {

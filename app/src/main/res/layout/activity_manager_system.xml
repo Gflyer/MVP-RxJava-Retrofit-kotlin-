@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/tool_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/def_padding_margin_5D"
+        android:layout_marginRight="@dimen/def_padding_margin_5D"
+        android:layout_marginTop="@dimen/def_padding_margin_20D"
+        android:background="@color/clo_status_light_blue"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/def_padding_margin_10D"
+        android:paddingTop="@dimen/def_padding_margin_10D">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/def_padding_margin_5D"
+            android:text="教学督导"
+            android:textColor="@color/clo_chart_green"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="的评分截止日期为："
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_supervisor_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018-04-04 "
+            android:textColor="@color/clo_dark_gray"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_supervisor_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/def_padding_margin_10D"
+            android:text="23:59:59 "
+            android:textColor="@color/clo_dark_gray"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/def_padding_margin_5D"
+        android:layout_marginRight="@dimen/def_padding_margin_5D"
+        android:layout_marginTop="@dimen/def_padding_margin_5D"
+        android:background="@color/clo_status_light_blue"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/def_padding_margin_25D"
+        android:paddingTop="@dimen/def_padding_margin_5D">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/def_padding_margin_5D"
+            android:text="修改督导评教截止日期为："
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_supervisor_choose"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/def_padding_margin_15D"
+            android:background="@drawable/bg_react_black"
+            android:gravity="center"
+            android:text="请选择"
+            android:textColor="@color/clo_dark_gray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_supervisor_commit"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/def_padding_margin_20D"
+            android:background="@drawable/bg_react_blue_white"
+            android:gravity="center"
+            android:text="提交"
+
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/def_padding_margin_5D"
+        android:layout_marginRight="@dimen/def_padding_margin_5D"
+        android:layout_marginTop="@dimen/def_padding_margin_10D"
+        android:background="@color/clo_chart_light_green"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/def_padding_margin_10D"
+        android:paddingTop="@dimen/def_padding_margin_10D">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/def_padding_margin_5D"
+            android:text="教师同行"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="的评分截止日期为："
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_teacher_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018-04-04 "
+            android:textColor="@color/clo_dark_gray"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_teacher_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/def_padding_margin_10D"
+            android:text="23:59:59 "
+            android:textColor="@color/clo_dark_gray"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/def_padding_margin_5D"
+        android:layout_marginRight="@dimen/def_padding_margin_5D"
+        android:layout_marginTop="@dimen/def_padding_margin_5D"
+        android:background="@color/clo_chart_light_green"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/def_padding_margin_25D"
+        android:paddingTop="@dimen/def_padding_margin_5D">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/def_padding_margin_5D"
+            android:text="修改同行评教截止日期为："
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_teacher_choose"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/def_padding_margin_15D"
+            android:background="@drawable/bg_react_black"
+            android:gravity="center"
+            android:text="请选择"
+            android:textColor="@color/clo_dark_gray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_teacher_commit"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/def_padding_margin_20D"
+            android:background="@drawable/bg_react_blue_white"
+            android:gravity="center"
+            android:text="提交"
+
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/def_padding_margin_5D"
+        android:layout_marginRight="@dimen/def_padding_margin_5D"
+        android:layout_marginTop="@dimen/def_padding_margin_10D"
+        android:background="@color/colorAccent_light"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/def_padding_margin_10D"
+        android:paddingTop="@dimen/def_padding_margin_10D">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/def_padding_margin_5D"
+            android:text="在校学生"
+            android:textColor="@color/clo_status_dark_blue"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="的评分截止日期为："
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_student_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018-04-04 "
+            android:textColor="@color/clo_dark_gray"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_student_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/def_padding_margin_10D"
+            android:text="23:59:59 "
+            android:textColor="@color/clo_dark_gray"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/def_padding_margin_5D"
+        android:layout_marginRight="@dimen/def_padding_margin_5D"
+        android:layout_marginTop="@dimen/def_padding_margin_5D"
+        android:background="@color/colorAccent_light"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/def_padding_margin_25D"
+        android:paddingTop="@dimen/def_padding_margin_5D">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/def_padding_margin_5D"
+            android:text="修改学生评教截止日期为："
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_student_choose"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/def_padding_margin_15D"
+            android:background="@drawable/bg_react_black"
+            android:gravity="center"
+            android:text="请选择"
+            android:textColor="@color/clo_dark_gray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_student_commit"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/def_padding_margin_20D"
+            android:background="@drawable/bg_react_blue_white"
+            android:gravity="center"
+            android:text="提交"
+
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

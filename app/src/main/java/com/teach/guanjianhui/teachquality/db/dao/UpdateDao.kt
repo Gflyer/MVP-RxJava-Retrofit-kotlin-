@@ -11,6 +11,14 @@ import io.reactivex.Single
  * Created by guanjianhui on 18-3-14.
  */
 class UpdateDao<E : BaseRXModel> : IUpdateDao<E> {
+    override fun update(item: E): Single<Boolean> {
+        val upSingle: Single<Boolean> = Single.create({ emitter ->
+            item.update { isSuccess ->
+                emitter.onSuccess(isSuccess)
+            }
+        })
+        return upSingle
+    }
 
     /**
      * 根据item进行修改
@@ -33,13 +41,14 @@ class UpdateDao<E : BaseRXModel> : IUpdateDao<E> {
         return upSingle
     }
 
+
     /**
      * 根据条件修改
      */
     override fun <N, O> update(clazz: Class<E>, upColumn: Property<N>, upValue: N, oldColumn: Property<O>, oldValue: O): Single<Boolean> {
         var upSingle: Single<Boolean> = Single.create({ emitter ->
-           var upList=select.from(clazz).where(oldColumn.`is`(oldValue)).queryList()
-            for (item in upList){
+            var upList = select.from(clazz).where(oldColumn.`is`(oldValue)).queryList()
+            for (item in upList) {
 
             }
         })

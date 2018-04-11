@@ -63,17 +63,23 @@
                 </LinearLayout>
 
                 <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="@dimen/def_padding_margin_10D"
                     android:id="@+id/textlayout_search"
-                    android:layout_width="220dp"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/def_padding_margin_20D">
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/def_padding_margin_10D"
+                    android:background="@drawable/bg_rect_round">
 
                     <EditText
+                        android:background="@null"
                         android:id="@+id/et_search_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusable="false"
+                        android:layout_marginLeft="@dimen/def_padding_margin_10D"
                         android:hint="请输入教师姓名(功能暂未开放)"
+                        android:layout_marginRight="@dimen/def_padding_margin_10D"
                         android:inputType="text" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -109,7 +115,7 @@
                     android:id="@+id/layout_eva_course_name"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="@drawable/bg_rect_round"
                     android:orientation="horizontal">
 
                     <TextView
@@ -398,6 +404,7 @@
                 android:layout_marginLeft="@dimen/def_padding_margin_15D"
                 android:text="2、在截止日期前，可删除数据重新评分。"
                 android:textColor="@color/clo_dark_gray"
+                android:layout_marginBottom="50dp"
                 android:textSize="15sp" />
         </LinearLayout>
 

@@ -463,6 +463,9 @@ class LeaderEvaActivity : BaseActivity(), LeaderEvaContact.View {
 
     }
 
+    /**
+     * 根据课程编号编号获取名称
+     */
     private fun getCourseName(courseNum: String): String {
         return SQLite.select(Syllabus_Table.courseName).from(TeachTable.Syllabus::class.java).where(Syllabus_Table.courseNum.`is`(courseNum)).querySingle()!!.courseName
     }

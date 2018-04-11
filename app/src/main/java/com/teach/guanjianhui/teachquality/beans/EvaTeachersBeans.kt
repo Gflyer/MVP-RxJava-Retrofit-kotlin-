@@ -5,6 +5,4 @@ package com.teach.guanjianhui.teachquality.beans
  * Created by guanjianhui on 18-3-28.
  */
 
-data class EvaTeachersBeans(var teacherNum: String,var teacherName: String, var list: ArrayList<EvaTeachItem>) {
-
-}
+data class EvaTeachersBeans(var teacherNum: String,var teacherName: String, var list: ArrayList<EvaTeachItem>)

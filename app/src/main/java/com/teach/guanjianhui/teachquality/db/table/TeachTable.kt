@@ -77,6 +77,7 @@ class TeachTable {
                             @Column @NotNull var termNum: String = "000",
                             @Column @NotNull var classNum: String = "000"
     ) : BaseRXModel()
+
     //8.三方评分权重比例表
     @Table(database = TeachDatabase::class)
     data class GradePercent(
@@ -94,7 +95,7 @@ class TeachTable {
 
     //10.学期表
     @Table(database = TeachDatabase::class)
-    data class Term(@PrimaryKey var termNum: String = "000"
+    data class Term(@PrimaryKey var termNum: String = "000", var termName: String = "2017-2018-2"
     ) : BaseRXModel()
 
     //11.学生用户表
@@ -134,7 +135,7 @@ class TeachTable {
                             @Column @NotNull var orderScore: Int = 0,
                             @Column var comment: String? = null,
                             @Column @NotNull var commentTime: String = "undef"
-    ) :BaseRXModel()
+    ) : BaseRXModel()
 
     //16.同行评分表
     @Table(database = TeachDatabase::class)

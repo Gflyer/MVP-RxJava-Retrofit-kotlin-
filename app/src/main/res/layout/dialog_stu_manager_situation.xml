@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginLeft="@dimen/def_padding_margin_30D"
+        android:layout_marginRight="@dimen/def_padding_margin_30D"
+        android:layout_marginTop="@dimen/def_padding_margin_30D"
+        android:elevation="@dimen/def_padding_margin_5D"
+        app:cardCornerRadius="@dimen/def_padding_margin_10D">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/def_padding_margin_15D"
+                android:text="学生评价"
+                android:textColor="@color/clo_status_light_green"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_stu_manager_term"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:text="---2016-2017-1"
+                android:textColor="@color/clo_default_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="@dimen/def_padding_margin_5D"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/def_padding_margin_20D"
+                    android:text="教学态度(20)"
+                    android:textColor="@color/clo_dark_gray"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/def_padding_margin_30D"
+                    android:background="@color/clo_default_gray" />
+
+                <TextView
+                    android:id="@+id/tv_stu_attitude_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:text="18"
+                    android:textColor="@color/clo_dark_gray"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/def_padding_margin_20D"
+                    android:text="教学内容(20)"
+                    android:textColor="@color/clo_dark_gray"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/def_padding_margin_30D"
+                    android:background="@color/clo_default_gray" />
+
+                <TextView
+                    android:id="@+id/tv_stu_content_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:text="18"
+                    android:textColor="@color/clo_dark_gray"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/def_padding_margin_20D"
+                    android:text="教学方法(30)"
+                    android:textColor="@color/clo_dark_gray"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/def_padding_margin_30D"
+                    android:background="@color/clo_default_gray" />
+
+                <TextView
+                    android:id="@+id/tv_stu_method_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:text="18"
+                    android:textColor="@color/clo_dark_gray"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/def_padding_margin_20D"
+                    android:text="教学效果(20)"
+                    android:textColor="@color/clo_dark_gray"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/def_padding_margin_30D"
+                    android:background="@color/clo_default_gray" />
+
+                <TextView
+                    android:id="@+id/tv_stu_effect_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:text="18"
+                    android:textColor="@color/clo_dark_gray"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/def_padding_margin_20D"
+                    android:text="教学秩序(10)"
+                    android:textColor="@color/clo_dark_gray"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/def_padding_margin_30D"
+                    android:background="@color/clo_default_gray" />
+
+                <TextView
+                    android:id="@+id/tv_stu_order_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:text="10"
+                    android:textColor="@color/clo_dark_gray"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="@dimen/def_padding_margin_10D"
+                android:layout_marginRight="@dimen/def_padding_margin_10D"
+                android:layout_marginTop="@dimen/def_padding_margin_5D"
+                android:background="@color/clo_status_light_green" />
+
+
+            <RelativeLayout
+                android:id="@+id/layout_stu_manager_yes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="确定"
+                    android:textColor="@color/clo_dark_gray"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

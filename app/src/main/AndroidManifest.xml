@@ -48,6 +48,10 @@
         <activity android:name=".ui.teach.activity.TeachTaskActivity"></activity>
         <activity android:name=".ui.teach.activity.EvaDetialActivity"></activity>
         <activity android:name=".ui.teach.activity.SupervisorChooseActivity"></activity>
+        <activity android:name=".ui.teach.activity.ManagerChooseActivity"></activity>
+        <activity android:name=".ui.teach.activity.ManagerSystemActivity"></activity>
+        <activity android:name=".ui.teach.activity.StuEvaSituationActivity"></activity>
+        <activity android:name=".ui.teach.activity.TeaEvaSituationActivity"></activity>
         <activity
             android:name=".ui.teach.activity.TotalDetialActivity"
             android:screenOrientation="landscape"></activity>
