@@ -7,24 +7,23 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
-import android.view.WindowManager
-import com.raizlabs.android.dbflow.sql.language.Operator
-import com.teach.guanjianhui.teachquality.R
-import kotlinx.android.synthetic.main.tool_title.*
+
 
 /**
  * 基类
  * Created by guanjianhui on 18-1-26.
  */
-abstract class BaseActivity : AppCompatActivity(),IBaseView {
+abstract class BaseActivity : AppCompatActivity(), IBaseView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setStatusBarTransparent()
+
         setContentView(layoutId())
 
         var rootView = window.decorView.findViewById<ViewGroup>(android.R.id.content)
+
 
         initView()
         initData()
@@ -61,6 +60,19 @@ abstract class BaseActivity : AppCompatActivity(),IBaseView {
 
     }
 
+    fun setStatusBarTransparent() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            try {
+                val decorViewClazz = Class.forName("com.android.internal.policy.DecorView")
+                val field = decorViewClazz.getDeclaredField("mSemiTransparentStatusBarColor")
+                field.isAccessible = true
+                field.setInt(window.decorView, Color.TRANSPARENT)  //改为透明
+            } catch (e: Exception) {
+            }
+
+        }
+    }
+
 
     //初始化监听器
     abstract fun initListener()
@@ -78,11 +90,9 @@ abstract class BaseActivity : AppCompatActivity(),IBaseView {
     abstract fun detachView()
 
     override fun showLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun dismissLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun onDestroy() {

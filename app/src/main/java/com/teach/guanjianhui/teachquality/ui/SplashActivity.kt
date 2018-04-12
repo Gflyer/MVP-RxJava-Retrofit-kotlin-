@@ -35,6 +35,7 @@ class SplashActivity : BaseActivity(), SplashContact.View {
     }
 
     override fun initView() {
+        setFontDark()
         mPresenter.attachView(this)
     }
 

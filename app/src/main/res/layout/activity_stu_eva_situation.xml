@@ -9,8 +9,9 @@
     <LinearLayout
         android:id="@+id/layout_eva_title"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:background="@drawable/bg_toolbar_head"
+        android:elevation="5dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 

@@ -31,6 +31,7 @@ class MyApplication : Application() {
         }
     }
 
+
     //相当于static
     companion object {
         fun getRefWatcher(ctx: Context): RefWatcher? {
