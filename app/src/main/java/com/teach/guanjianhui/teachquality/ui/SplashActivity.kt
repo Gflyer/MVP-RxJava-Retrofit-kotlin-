@@ -6,7 +6,6 @@ import android.os.Message
 import com.teach.guanjianhui.teachquality.R
 import com.teach.guanjianhui.teachquality.base.BaseActivity
 import com.teach.guanjianhui.teachquality.ui.teach.activity.LoginActivity
-import com.teach.guanjianhui.teachquality.utils.ToastUtils
 
 
 /**
@@ -51,7 +50,6 @@ class SplashActivity : BaseActivity(), SplashContact.View {
     }
 
     override fun saveSuccess(msg: String) {
-        //ToastUtils.showToast(this, msg)
     }
 
     override fun saveFailure() {
@@ -65,7 +63,7 @@ class SplashActivity : BaseActivity(), SplashContact.View {
     override fun startActivity() {
         var message = Message.obtain()
         message.what = 0x01
-        handler.sendMessageDelayed(message, 3000)
+        handler.sendMessageDelayed(message, 2500)
 
     }
 

@@ -2,6 +2,7 @@ package com.teach.guanjianhui.teachquality.ui.teach.activity
 
 import android.content.Intent
 import android.support.v4.content.ContextCompat
+import android.view.View
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
@@ -30,6 +31,7 @@ class EvaDetialActivity : BaseActivity() {
 
     override fun initView() {
         tv_title.text = "评分统计详情"
+        tv_end.visibility = View.GONE
 
         //获取x轴
         val xAxis = lineChart_total.xAxis
