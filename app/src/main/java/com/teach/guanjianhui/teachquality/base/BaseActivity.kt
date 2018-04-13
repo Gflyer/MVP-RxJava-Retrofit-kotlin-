@@ -3,11 +3,8 @@ package com.teach.guanjianhui.teachquality.base
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.view.ViewGroup
-
 
 /**
  * 基类
@@ -22,8 +19,7 @@ abstract class BaseActivity : AppCompatActivity(), IBaseView {
 
         setContentView(layoutId())
 
-        var rootView = window.decorView.findViewById<ViewGroup>(android.R.id.content)
-
+        //var rootView = window.decorView.findViewById<ViewGroup>(android.R.id.content)
 
         initView()
         initData()
@@ -37,12 +33,12 @@ abstract class BaseActivity : AppCompatActivity(), IBaseView {
     fun getStatusBarHeight(): Int {
         var result = 0;
         //获取状态栏高度的资源id
-        var resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        var resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
+
         if (resourceId > 0) {
-            result = getResources().getDimensionPixelSize(resourceId);
+            result = resources.getDimensionPixelSize(resourceId);
         }
         return result;
-
 
     }
 
@@ -68,6 +64,7 @@ abstract class BaseActivity : AppCompatActivity(), IBaseView {
                 field.isAccessible = true
                 field.setInt(window.decorView, Color.TRANSPARENT)  //改为透明
             } catch (e: Exception) {
+
             }
 
         }

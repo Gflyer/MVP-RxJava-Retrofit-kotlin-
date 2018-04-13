@@ -48,9 +48,6 @@ class SplashPresenter : BasePresenter<SplashContact.View>(), SplashContact.Prese
 
         val classList = ArrayList<TeachTable.Class>()
 
-//        termList.apply {
-//            add(TeachTable.Term(""))
-//        }
 
         classList.apply {
             add(TeachTable.Class("309", "王者班", "0"))
